@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Corella</title>
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <img src="img/logo.png" class="logo">
+        <img src="img/menu-icon.png" class="menu-icon">
+    </div>
+    <div class="row">
+        <div class="left-col">
+            <div class="content">
+                <h1><span>Lorem</span> ipsum dolor sit amet consectetur.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Dolor debitis voluptatum facere numquam. Harum, deleniti!</p>
+                <div class="arrow">
+                    <img src="img/arrow.png">
+                </div>
+                <img src="img/art.png" class="art">
+            </div>
+        </div>
+        <div class="right-col">
+            <img src="img/pic1.png" id="picture">
+        </div>
+    </div>
+    <div class="controller">
+        <ul>
+            <li class="btn active">01</li>
+            <li class="btn">02</li>
+            <li class="btn">03</li>
+            <li class="btn">04</li>
+        </ul>
+    </div>
+</div>
+<script>
+var btn = document.getElementsByClassName('btn');
+var picture = document.getElementById('picture');
+for(let i=0; i<btn.length; i++) {
+    btn[i].addEventListener('click', function(){
+        let current = document.getElementsByClassName('active');
+        current[0].className = current[0].className.replace('active', '');
+        this.className += ' active';
+    });
+}  
+    btn[0].onclick = function(){
+        picture.src = 'img/pic1.png';
+    }
+    btn[1].onclick = function(){
+        picture.src = 'img/pic2.png';
+    }
+    btn[2].onclick = function(){
+        picture.src = 'img/pic3.png';
+    }
+    btn[3].onclick = function(){
+        picture.src = 'img/pic4.png';
+    }        
+</script>
+</body>
+</html>
